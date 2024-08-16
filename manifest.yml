@@ -1,0 +1,28 @@
+# check ACT AS USER
+modules:
+  trigger:
+    - key: issue-event-trigger
+      function: handleIssueEvent
+      events:
+        - avi:jira:created:issue
+        - avi:jira:updated:issue
+  webtrigger:
+    - key: updateIssueEndpoint
+      function: update-issue-controller
+
+
+  function:
+    - key: handleIssueEvent
+      handler: index.handleIssueEvent
+    - key: update-issue-controller
+      handler: index.handleUpdateIssueRequest
+
+
+permissions:
+  scopes:
+    - read:jira-work
+    - write:jira-work
+app:
+  runtime:
+    name: nodejs18.x
+  id: ari:cloud:ecosystem::app/4e69c11d-44c4-47d6-975e-5762cb285383

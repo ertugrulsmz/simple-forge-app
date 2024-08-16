@@ -1,0 +1,14 @@
+{
+  "name": "esemiz-forge-try-1",
+  "version": "1.0.0",
+  "description": "try forge",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@forge/api": "^3.9.0"
+  }
+}
